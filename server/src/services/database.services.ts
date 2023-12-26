@@ -1,5 +1,6 @@
 import { Sequelize } from 'sequelize'
 import { config } from 'dotenv'
+import { Test } from '~/models/schemas/Test'
 config()
 
 class DatabaseService {
@@ -21,6 +22,8 @@ class DatabaseService {
       port: this.POSTGRES_PORT,
       dialect: 'postgres'
     })
+    ;(this.sequelize as any).addModels([Test])
+
     await this.sequelize
       .authenticate()
       .then(() => {
