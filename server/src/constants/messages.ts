@@ -1,4 +1,5 @@
 export const USERS_MESSAGES = {
+  GET_INVENTORY_LOCATION_SUCCESS: 'Get location successfully!',
   VALIDATION_ERROR: 'Validation error',
   NAME_IS_REQUIRED: 'Name is required',
   NAME_MUST_BE_A_STRING: 'Name must be a string',
