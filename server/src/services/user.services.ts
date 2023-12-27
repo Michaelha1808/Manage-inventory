@@ -6,8 +6,8 @@ import { ReceiptmentProduct } from '~/models/schemas/ReceiptmentProduct .schema'
 
 class UserService {
   private async insertProduct(product: Product): Promise<number> {
-    const sql =
-      'INSERT INTO products (ma_sp, name, unit, quantity_by_doc, quantity_real, price, total_price) VALUES ($1, $2, $3, $4, $5, $6, $7)'
+    const sql = `INSERT INTO products (ma_sp, name, unit, quantity_by_doc, quantity_real, price, total_price) 
+                 VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id`
     const values = [
       product.ma_sp,
       product.name,
