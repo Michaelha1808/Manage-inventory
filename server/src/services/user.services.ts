@@ -2,6 +2,7 @@ import { pool } from '../services/database.services'
 import { QueryResult } from 'pg'
 import { Product } from '~/models/schemas/Products.schema'
 import { Receiptment } from '~/models/schemas/Receiptment.shema'
+import { ReceiptmentProduct } from '~/models/schemas/ReceiptmentProduct .schema'
 
 class UserService {
   private async insertProduct(product: Product): Promise<number> {
@@ -42,7 +43,11 @@ class UserService {
     const result = await pool.query(sql, values)
     return result.rows[0].id // Trả về id của receiptment vừa được insert
   }
-  async createTableReference() {}
+  async createTableReference(receiptmentProduct: ReceiptmentProduct): Promise<void> {
+    const sql = `INSERT INTO receiptment_products (receiptment_id, product_id) VALUES ($1, $2)`
+    const values = [receiptmentProduct.receiptment_id, receiptmentProduct.product_id]
+    await pool.query(sql, values)
+  }
 }
 const userService = new UserService()
 export default userService
