@@ -46,6 +46,7 @@ export const createLocateController = async (
     debt,
     having_yes
   }
+  console.log(number_receipment)
   const arr_id_products = await userService.createProducts(req.body.products)
   const id_receiptment = await userService.createReceiptment(receiptments)
   await userService.createTableReference(id_receiptment, arr_id_products)

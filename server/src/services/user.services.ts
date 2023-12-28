@@ -7,7 +7,7 @@ import { ReceiptmentProduct } from '~/models/schemas/ReceiptmentProduct .schema'
 class UserService {
   private async insertProduct(product: Product): Promise<number> {
     const sql = `INSERT INTO products (ma_sp, name, unit, quantity_by_doc, quantity_real, price, total_price) 
-                 VALUES ($1, $2, $3, $4, $5, $6, $7 ) RETURNING id`
+                 VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id`
     const values = [
       product.ma_sp,
       product.name,
@@ -15,8 +15,7 @@ class UserService {
       product.quantity_by_doc,
       product.quantity_real,
       product.price,
-      product.total_price,
-      new Date()
+      product.total_price
     ]
     const result = await pool.query(sql, values)
     return result.rows[0].id
