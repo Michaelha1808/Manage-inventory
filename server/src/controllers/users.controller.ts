@@ -13,7 +13,8 @@ export const getLocateController = async (req: Request, res: Response, next: Nex
     data
   })
 }
-export const createLocateController = async (
+
+export const createReceiptmentAndProducts = async (
   req: Request<ParamsDictionary, any, ReceiptmentProductsReqBody>,
   res: Response,
   next: NextFunction
@@ -46,7 +47,6 @@ export const createLocateController = async (
     debt,
     having_yes
   }
-  console.log(number_receipment)
   const arr_id_products = await userService.createProducts(req.body.products)
   const id_receiptment = await userService.createReceiptment(receiptments)
   await userService.createTableReference(id_receiptment, arr_id_products)
@@ -54,4 +54,8 @@ export const createLocateController = async (
     message: USERS_MESSAGES.CREATE_RECEIPTMENT_PRODUCT_SUCCESS
   })
 }
-export const createReceiptmentAndProducts = async (req: Request, res: Response, next: NextFunction) => {}
+export const createLocateController = async (
+  req: Request<ParamsDictionary, any, ReceiptmentProductsReqBody>,
+  res: Response,
+  next: NextFunction
+) => {}

@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { createLocateController, getLocateController } from '~/controllers/users.controller'
+import { createReceiptmentAndProducts, getLocateController } from '~/controllers/users.controller'
 import { wrapRequestHandler } from '~/utils/handlers'
 const router = Router()
 
@@ -40,5 +40,5 @@ router.get('/inventory', wrapRequestHandler(getLocateController))
  *
  *     }
  */
-router.post('/receiptment', wrapRequestHandler(createLocateController))
+router.post('/receiptment', wrapRequestHandler(createReceiptmentAndProducts))
 export default router
