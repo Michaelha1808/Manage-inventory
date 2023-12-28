@@ -1,8 +1,14 @@
 export interface Receiptment {
-  delivery_person_name: string
-  according_to: string
-  according_number: number
-  according_date: Date
-  according_by: string
-  id_inventory: number
+  delivery_person_name: string //Họ và tên người giao
+  according_to: string // Theo...
+  according_number: number // Số
+  according_date: Date // ngày tháng năm
+  according_by: string // của...
+  id_inventory: number // id của kho và địa điểm
+  organizational_unit: string // Đơn vị...
+  organization_department: string // Bộ phận..
+  date_receipment: Date // Ngày tháng năm của phiếu....
+  number_receipment: number // Số:....
+  debt: string // Nợ...
+  having_yes: string // Có
 }

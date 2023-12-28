@@ -1,5 +1,6 @@
 export const USERS_MESSAGES = {
-  GET_INVENTORY_LOCATION_SUCCESS: 'Get location successfully!',
+  GET_INVENTORY_LOCATION_SUCCESS: 'Lấy địa chỉ kho thành công!',
+  CREATE_RECEIPTMENT_PRODUCT_SUCCESS: 'Tạo phiếu nhập kho thành công!',
   VALIDATION_ERROR: 'Validation error',
   NAME_IS_REQUIRED: 'Name is required',
   NAME_MUST_BE_A_STRING: 'Name must be a string',
