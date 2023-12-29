@@ -33,6 +33,9 @@ export const createReceiptmentAndProducts = async (
     debt,
     having_yes
   } = req.body
+  console.log(delivery_person_name)
+  console.log(req.body)
+
   const receiptments = {
     delivery_person_name,
     according_to,
@@ -51,6 +54,7 @@ export const createReceiptmentAndProducts = async (
   const id_receiptment = await userService.createReceiptment(receiptments)
   await userService.createTableReference(id_receiptment, arr_id_products)
   return res.json({
+    status: HTTP_STATUS.CREATED,
     message: USERS_MESSAGES.CREATE_RECEIPTMENT_PRODUCT_SUCCESS
   })
 }
