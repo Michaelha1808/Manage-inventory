@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="./css/style.css" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+  rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="./css/nav.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+<body>
+  <nav class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-8">
+          <div style="font-family: 'Be Vietnam Pro'; color: #001857">
+            <div style="margin-bottom: 10px; width: 340px">
+              <label for="unit" class="" style="font-size: 20px; font-weight: bold">Đơn vị:</label>
+              <input required type="text" id="organizational_unit" style="
+                    font-size: 20px;
+                    border: none;
+                    border-bottom: 1px dotted;
+                    width: 262px;
+                    outline: none;
+                  " />
+            </div>
+            <div style="width: 340px">
+              <label for="organization_department" class="" style="font-size: 20px; font-weight: bold">Bộ phận:</label>
+              <input required type="text" id="organization_department" style="
+                    font-size: 20px;
+                    border: none;
+                    border-bottom: 1px dotted;
+                    outline: none;
+                  " />
+            </div>
+          </div>
+        </div>
+        <div class="col-4 text-center" style="font-family: 'Be Vietnam Pro'; color: #001857">
+          <div style="font-size: 20px; font-weight: bold">Mẫu số 01 - VT</div>
+          <div>(Ban hành theo thông tư số 200/2014/TT-BTC</div>
+          <div>Ngày 22/12/2014 của Bộ Tài Chính)</div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <section class="mt-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-auto f-s-32 f-w-600 title f-f-Be-VN-Pro-SemiBold color-primary">
+          PHIẾU NHẬP KHO
+        </div>
+      </div>
+      <div class="d-flex justify-content-center align-items-center mt-3 input-groups" style="
+            font-family: 'Be Vietnam Pro';
+            color: #001857;
+            font-style: italic;
+          ">
+        <div class="" style="
+              display: flex;
+              justify-content: start;
+              align-items: center;
+              gap: 10px;
+            ">
+          <label for="date_receipment_day" style="font-size: 16px; font-weight: bold">Ngày</label>
+          <input required type="number"  oninput="limitInput(this,2)" id="date_receipment_day" style="
+                font-size: 16px;
+                border: none;
+                border-bottom: 1px dotted;
+                width: 100px;
+                outline: none;
+                margin-right: 10px;
+              " />
+
+          <label for="date_receipment_month" style="font-size: 16px; font-weight: bold">tháng</label>
+          <input required type="number" oninput="limitInput(this,2)"  id="date_receipment_month" style="
+                font-size: 16px;
+                border: none;
+                border-bottom: 1px dotted;
+                width: 100px;
+                outline: none;
+                margin-right: 10px;
+              " />
+
+          <label for="date_receipment_year" style="font-size: 16px; font-weight: bold">năm</label>
+          <input required type="number" oninput="limitInput(this,4)" maxlength="4"  id="date_receipment_year" style="
+                font-size: 16px;
+                border: none;
+                border-bottom: 1px dotted;
+                width: 100px;
+                outline: none;
+              " />
+        </div>
+      </div>
+      <div class="d-flex justify-content-center align-items-center mt-3 input-groups"
+        style="font-family: 'Be Vietnam Pro'; color: #001857">
+        <div style="margin-bottom: 10px; width: 340px">
+          <label for="number_receipment" class="" style="font-size: 16px; font-weight: bold">Số:</label>
+          <input required type="number" id="number_receipment" style="
+                font-size: 16px;
+                border: none;
+                border-bottom: 1px dotted;
+                width: 262px;
+                outline: none;
+              " />
+        </div>
+      </div>
+      <div class="row input-groups">
+        <div class="col-12">
+          <div class="d-flex flex-column align-items-end" style="font-family: 'Be Vietnam Pro'; color: #001857">
+            <div style="margin-bottom: 10px; width: 340px">
+              <label for="debt" class="" style="font-size: 20px; font-weight: bold">Nợ:</label>
+              <input required type="text" id="debt" style="
+                    font-size: 20px;
+                    border: none;
+                    border-bottom: 1px dotted;
+                    width: 275px;
+                    outline: none;
+                  " />
+            </div>
+            <div style="width: 340px">
+              <label for="having_yes" class="" style="font-size: 20px; font-weight: bold">Có:</label>
+              <input required type="text" id="having_yes" style="
+                    font-size: 20px;
+                    border: none;
+                    border-bottom: 1px dotted;
+                    outline: none;
+                    width: 275px;
+                  " />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-start mt-3">
+        <div class="col-12 input-groups">
+          <div class="form-row" style="font-family: 'Be Vietnam Pro'; color: #001857">
+            <label for="number_topic" class="f-s-20">- Họ và tên người giao:</label>
+            <input required type="text" class="dotted-input f-s-20" id="delivery_person_name" placeholder="" />
+          </div>
+          <div class="input-groups" style="font-family: 'Be Vietnam Pro'; color: #001857">
+            <div style="
+                  display: flex;
+                  justify-content: start;
+                  align-items: center;
+                  gap: 10px;
+                ">
+              <label for="according_to" style="font-size: 20px">- Theo</label>
+              <input required type="text" id="according_to" style="
+                    font-size: 20px;
+                    border: none;
+                    border-bottom: 1px dotted;
+                    width: 165px;
+                    outline: none;
+                    margin-right: 10px;
+                  " />
+
+              <label for="according_number" style="font-size: 20px">số</label>
+              <input required type="number" id="according_number" style="
+                    font-size: 20px;
+                    border: none;
+                    border-bottom: 1px dotted;
+                    width: 140px;
+                    outline: none;
+                    margin-right: 10px;
+                  " />
+
+              <label for="according_date_day" style="font-size: 20px">ngày</label>
+              <input required type="number" oninput="limitInput(this,2)"  id="according_date_day" style="
+                    font-size: 20px;
+                    border: none;
+                    border-bottom: 1px dotted;
+                    width: 140px;
+                    outline: none;
+                  " />
+
+              <label for="according_date_month" style="font-size: 20px">tháng</label>
+              <input required type="number" oninput="limitInput(this,2)"   id="according_date_month" style="
+                    font-size: 20px;
+                    border: none;
+                    border-bottom: 1px dotted;
+                    width: 140px;
+                    outline: none;
+                  " />
+
+              <label for="according_date_year" style="font-size: 20px">năm</label>
+              <input required type="number" oninput="limitInput(this,4)"  id="according_date_year" style="
+                    font-size: 20px;
+                    border: none;
+                    border-bottom: 1px dotted;
+                    width: 140px;
+                    outline: none;
+                  " />
+
+              <label for="according_by" style="font-size: 20px">của</label>
+              <input required type="text" id="according_by" style="
+                    font-size: 20px;
+                    border: none;
+                    border-bottom: 1px dotted;
+                    width: 140px;
+                    outline: none;
+                  " />
+            </div>
+          </div>
+          <div class="my-4 input-groups" style="font-family: 'Be Vietnam Pro'; color: #001857">
+            <div style="
+                  display: flex;
+                  justify-content: start;
+                  align-items: center;
+                  gap: 10px;
+                ">
+              <label for="warehouse" style="font-size: 20px">Nhập tại kho:</label>
+              <select onchange="getLocate(this)" id="warehouse" style="width: 505px">
+                <!-- Các tùy chọn ở đây -->
+              </select>
+              <label style="font-size: 20px">Địa điểm:</label>
+              </label>
+              <div id="location">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <table id="custom-table">
+          <thead>
+            <tr>
+              <th class="first-child" class="f-s-20 f-f-Be-VN-Pro-Medium color-primary" rowspan="2" style="width: 5%"
+                style="width: 5%">
+                STT
+              </th>
+              <th class="f-s-20 f-f-Be-VN-Pro-Medium color-primary" rowspan="2" style="width: 15%">
+                Tên, nhãn hiệu, quy cách, phẩm chất vật tư, dụng cụ sản phẩm,
+                hàng hoá
+              </th>
+              <th class="f-s-20 f-f-Be-VN-Pro-Medium color-primary" style="width: 5%" rowspan="2">
+                Mã số
+              </th>
+              <th class="f-s-20 f-f-Be-VN-Pro-Medium color-primary" rowspan="2" style="width: 5%">
+                Đơn vị tính
+              </th>
+              <th class="f-s-20 f-f-Be-VN-Pro-Medium color-primary" colspan="2" style="width: 15%">
+                Số lượng
+              </th>
+              <th class="f-s-20 f-f-Be-VN-Pro-Medium color-primary" style="width: 5%" rowspan="2" style="width: 25%">
+                Đơn giá
+              </th>
+              <th class="f-s-20 f-f-Be-VN-Pro-Medium color-primary" style="width: 5%" rowspan="2" style="width: 25%">
+                Thành tiền
+              </th>
+              <th class="last-child" class="f-s-20 f-f-Be-VN-Pro-Medium color-primary" style="width: 5%" rowspan="2">
+                Chức năng
+              </th>
+            </tr>
+            <tr>
+              <th>Theo chứng từ</th>
+              <th>Thực nhập</th>
+            </tr>
+          </thead>
+          <tbody class="input-groups" id="data-product">
+            <tr>
+              <td>1</td>
+              <td>
+                <input required type="text" class="f-s-20 f-f-Be-VN-Pro-Regular color-primary name" />
+              </td>
+              <td>
+                <input required type="text" 
+                  class="f-s-20 f-f-Be-VN-Pro-Regular color-primary ma_sp" />
+              </td>
+              <td>
+                <input required type="text" class="f-s-20 f-f-Be-VN-Pro-Regular color-primary unit" />
+              </td>
+              <td>
+                <input required type="number" id="documentNumber1" oninput="calculateTotalPrice(1)"
+                  class="f-s-20 f-f-Be-VN-Pro-Regular color-primary quantity_by_doc" />
+              </td>
+              <td>
+                <input required type="number" class="f-s-20 f-f-Be-VN-Pro-Regular color-primary quantity_real" />
+              </td>
+              <td>
+                <input required type="number" id="unitPrice1" class="f-s-20 f-f-Be-VN-Pro-Regular color-primary price"
+                  oninput="calculateTotalPrice(1)" />
+              </td>
+              <td>
+                <input required type="number" id="totalPrice1" class="f-s-20 f-f-Be-VN-Pro-Regular color-primary"
+                  readonly />
+              </td>
+              <td>
+                <div class="function-buttons">
+                  <img class="cursor-pointer" src="./img/delete.svg" onclick="deleteRow(this)" />
+                </div>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr id="row-sum">
+              <th></th>
+              <th>Cộng</th>
+              <th>
+                <input type="text" id="contentRequirement"
+                  class="f-s-20 f-f-Be-VN-Pro-Regular color-primary text-center" placeholder="x" disabled />
+              </th>
+              <th>
+                <input type="text" id="publishedPlace" class="f-s-20 f-f-Be-VN-Pro-Regular color-primary text-center"
+                  placeholder="x" disabled />
+              </th>
+              <th>
+                <input type="text" id="note" class="f-s-20 f-f-Be-VN-Pro-Regular color-primary text-center"
+                  placeholder="x" disabled />
+              </th>
+              <th>
+                <input type="text" id="note" class="f-s-20 f-f-Be-VN-Pro-Regular color-primary text-center"
+                  placeholder="x" disabled />
+              </th>
+              <th>
+                <input type="text" id="note" class="f-s-20 f-f-Be-VN-Pro-Regular color-primary text-center"
+                  placeholder="x" disabled />
+              </th>
+              <th>
+                <input type="text" id="note" class="f-s-20 f-f-Be-VN-Pro-Regular color-primary text-center"
+                  placeholder="x" disabled id="totalPrice1" />
+              </th>
+              <th></th>
+            </tr>
+          </tfoot>
+        </table>
+        <div class="d-flex justify-content-center">
+          <img class="cursor-pointer" src="./img/add.svg" onclick="addRow()" />
+        </div>
+      </div>
+      
+      <div class="row my-5" style="font-family: 'Be Vietnam Pro'; color: #001857">
+        <div class="col text-center">
+          <div class="signature-field">
+            Người lập phiếu
+            <span>(Ký, họ tên)</span>
+          </div>
+        </div>
+        <div class="col text-center">
+          <div class="signature-field">
+            Người giao hàng
+            <span>(Ký, họ tên)</span>
+          </div>
+        </div>
+        <div class="col text-center">
+          <div class="signature-field">
+            Thủ kho
+            <span>(Ký, họ tên)</span>
+          </div>
+        </div>
+        <div class="col text-center">
+          <div class="signature-field">
+            Kế toán trưởng
+            <span>(Học bộ phận có nhu cầu nhập)</span>
+            <span>(Ký, họ tên)</span>
+          </div>
+        </div>
+      </div>
+      <div class="container mb-3 pt-4">
+        <div class="row">
+          <div class="col-12 d-flex justify-content-end">
+            <button id="completeButton" class="complete-button f-s-20 f-f-Be-VN-Pro-SemiBold">
+              Hoàn thành
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./javascripts/addrow.js"></script>
+  <script src="./javascripts/GVS.js"></script>
+</body>
+<script>
+  $(document).ready(function () {
+    $.ajax({
+      url: GVS.GET_INVENTORY_LOCATION,
+      method: "GET",
+      success: (res) => {
+        console.log(res);
+        let warehouseHtml = ''
+        let locateHtml = ''
+        let html = ''
+        res.data.forEach(elm => {
+
+          warehouseHtml += `
+            <optgroup class=" w-100" label="${elm.name}">`
+          elm.locations.forEach(location => {
+            warehouseHtml +=
+              `<option value="${location.id}" valueLocate="${location.locate}">${location.name} -- ${location.locate}</option>`
+          })
+          warehouseHtml += `</optgroup>`
+        });
+        $('#warehouse').html(warehouseHtml)
+
+      },
+
+    });
+
+    $("#warehouse").select2({
+      placeholder: "Chọn kho",
+      allowClear: true,
+    });
+    //   $("#location").select2({
+    //     placeholder: "Chọn địa điểm",
+    //     allowClear: true,
+    //   });
+  });
+
+  function getLocate(e) {
+    const selectedOption = $(e).find('option:selected')
+    const valuelocate = selectedOption.attr('valuelocate')
+
+
+    $("#location").text(valuelocate)
+  }
+
+  function calculateTotalPrice(rowNumber) {
+    var documentNumber = parseFloat(document.getElementById('documentNumber' + rowNumber).value) || 0;
+    var unitPrice = parseFloat(document.getElementById('unitPrice' + rowNumber).value) || 0;
+    var totalPrice = documentNumber * unitPrice;
+
+    document.getElementById('totalPrice' + rowNumber).value = totalPrice;
+  }
+
+  function addRow() {
+    var table = document.getElementById("custom-table").getElementsByTagName("tbody")[0];
+    var newRow = table.insertRow(table.rows.length);
+    var rowIndex = table.rows.length;
+
+    for (var i = 0; i < 8; i++) {
+      var cell = newRow.insertCell(i);
+      if (i === 0) {
+        cell.innerHTML = rowIndex;
+      } else if (i === 4) {
+        cell.innerHTML = '<input type="number" id="documentNumber' + rowIndex +
+          '" class="f-s-20 f-f-Be-VN-Pro-Regular color-primary quantity_by_doc" oninput="calculateTotalPrice(' + rowIndex + ')" />';
+      } else if (i === 6) {
+        cell.innerHTML = '<input type="number" id="unitPrice' + rowIndex +
+          '" class="f-s-20 f-f-Be-VN-Pro-Regular color-primary price" oninput="calculateTotalPrice(' + rowIndex + ')" />';
+      } else if (i === 7) {
+        cell.innerHTML = '<input type="text" id="totalPrice' + rowIndex +
+          '" class="f-s-20 f-f-Be-VN-Pro-Regular color-primary total_price" readonly />';
+      } else if (i === 5) {
+        cell.innerHTML = '<input type="number" ' + rowIndex +
+          '" class="f-s-20 f-f-Be-VN-Pro-Regular color-primary quantity_real" oninput="calculateTotalPrice(' + rowIndex + ')" />';
+      } else if (i ===3) {
+        cell.innerHTML = '<input type="text" class="f-s-20 f-f-Be-VN-Pro-Regular color-primary unit" />';
+      }
+      else if (i ===2) {
+        cell.innerHTML = '<input type="text" class="f-s-20 f-f-Be-VN-Pro-Regular color-primary ma_sp" />';
+      }
+      else if (i ===1) {
+        cell.innerHTML = '<input type="text" class="f-s-20 f-f-Be-VN-Pro-Regular color-primary name" />';
+      }
+    }
+
+    var deleteCell = newRow.insertCell(8);
+    deleteCell.innerHTML =
+      '<div class="function-buttons"><img class="cursor-pointer" src="./img/delete.svg" onclick="deleteRow(this)" /></div>';
+  }
+
+
+
+  function deleteRow(r) {
+    var table = document
+      .getElementById("custom-table")
+      .getElementsByTagName("tbody")[0];
+    if (table.rows.length > 1) {
+      var confirmDelete = confirm(
+        "Bạn có chắc chắn muốn xóa hàng này không?"
+      );
+      if (confirmDelete) {
+        var i = r.parentNode.parentNode.rowIndex;
+        table.deleteRow(i - 1);
+        updateIndex();
+      }
+    } else {
+      alert("Không thể xóa hàng cuối cùng!");
+    }
+  }
+
+  function updateIndex() {
+    var table = document
+      .getElementById("custom-table")
+      .getElementsByTagName("tbody")[0];
+    for (var i = 0; i < table.rows.length; i++) {
+      table.rows[i].cells[0].innerHTML = i + 1;
+    }
+  }
+
+  document
+    .getElementById("completeButton")
+    .addEventListener("click", function () {
+      var inputsOutsideTable = document.querySelectorAll(
+        "input:not(#custom-table input)"
+      );
+      var inputsInsideTable = document.querySelectorAll(
+        "#custom-table input"
+      );
+      var hasError = false;
+
+      inputsOutsideTable.forEach(function (input) {
+        if (input.value.trim() === "") {
+          input.classList.add("error");
+          hasError = true;
+        } else {
+          input.classList.remove("error");
+        }
+      });
+
+      inputsInsideTable.forEach(function (input) {
+        if (input.value.trim() === "") {
+          input.classList.add("error");
+          hasError = true;
+        } else {
+          input.classList.remove("error");
+        }
+      });
+
+      var divGroups = document.querySelectorAll(".input-groupss");
+      divGroups.forEach(function (group) {
+        var inputs = group.querySelectorAll("input");
+        var groupError = Array.from(inputs).some(
+          (input) => input.value.trim() === ""
+        );
+        if (groupError) {
+          group.classList.add("group-error");
+        } else {
+          group.classList.remove("group-error");
+        }
+      });
+
+      if (hasError) {
+        alert("Vui lòng nhập tất cả các trường yêu cầu.");
+      }
+    });
+
+  document.addEventListener("input", function (event) {
+    if (event.target.matches(".error")) {
+      event.target.classList.remove("error");
+    }
+  });
+  function getTableData () {
+    const tableRows = document.querySelectorAll("#data-product tr"); // Lấy tất cả hàng trong bảng có id là 'data-product'
+    const data = [];
+
+    // Lặp qua mỗi hàng và lấy dữ liệu từ các input
+    tableRows.forEach((row, index) => {
+        // Lấy giá trị từ các input, sử dụng class cho từng loại dữ liệu
+        const name = row.querySelector('.name').value;
+        const ma_sp = row.querySelector('.ma_sp').value;
+        const unit = row.querySelector('.unit').value;
+        const quantity_by_doc = row.querySelector('.quantity_by_doc').value;
+        const quantity_real = row.querySelector('.quantity_real').value;
+        const price = row.querySelector('.price').value;
+        // Đối với totalPrice, giả sử là bạn đã tính toán giá trị này trong hàm calculateTotalPrice
+        const total_price = row.querySelector('[id^="totalPrice"]').value; // Sử dụng bắt đầu từ id 'totalPrice'
+
+        // Thêm đối tượng vào mảng
+        data.push({
+            name: name,
+            ma_sp: ma_sp,
+            unit: unit,
+            quantity_by_doc: Number(quantity_by_doc),
+            quantity_real: Number(quantity_real),
+            price: Number(price),
+            total_price: Number(total_price)
+        });
+    });
+    return data;
+  }
+  function createReceipemtAndProduct() {
+    const delivery_person_name = $('#delivery_person_name').val()
+    const according_to = $('#according_to').val()
+    const according_number = Number($('#according_number').val())
+    const according_date = `${$('#according_date_year').val()}-${$('#according_date_month').val()}-${$('#according_date_day').val()}`
+    const according_by = $('#according_by').val()
+    const id_inventory = Number($('#warehouse option:selected').attr('value'))
+    const organizational_unit = $('#organizational_unit').val()
+    const organization_department = $('#organization_department').val()
+    const date_receipment = `${$('#date_receipment_year').val()}-${$('#date_receipment_month').val()}-${$('#date_receipment_day').val()}`
+    const number_receipment = Number($('#number_receipment').val())
+    const debt = $('#debt').val()
+    const having_yes = $('#having_yes').val()
+    const products = getTableData()
+    const data = {
+        delivery_person_name,
+        according_to,
+        according_number,
+        according_date,
+        according_by,
+        id_inventory,
+        organizational_unit,
+        organization_department,
+        date_receipment,
+        number_receipment,
+        debt,
+        having_yes,
+        products
+    }
+    $.ajax({
+        url:GVS.CREATE_RECEIPMENT_AND_PRODUCTS,
+        method: 'POST',
+        data:data,
+        success:(res)=>{
+            if(res.status){
+                Swal.fire({
+                title: "Thông báo!",
+                text: res.message,
+                icon: "success",
+                confirmButtonText: "OK",
+                }).then((result) => {
+                window.location.href = "index.html";
+                });
+            }else{
+                Swal.fire({
+                title: "Thông báo!",
+                text: res.message,
+                icon: "error",
+                confirmButtonText: "OK",
+                })
+            }
+        }
+    })
+
+  }
+  function limitInput(elem,length) {
+  if (elem.value.length > length) {
+    elem.value = elem.value.slice(0, length);
+  }
+}
+</script>
+
+</html>

@@ -1,3 +1,4 @@
+import { InventoryLocation } from '~/models/schemas/InventoryLocation.schema'
 import { pool } from '../services/database.services'
 import { QueryResult } from 'pg'
 import { Product } from '~/models/schemas/Products.schema'
@@ -21,8 +22,26 @@ class UserService {
     return result.rows[0].id
   }
   async getLocation() {
-    const { rows }: QueryResult = await pool.query('SELECT * FROM inventory_locationi')
-    return rows
+    const { rows }: QueryResult<InventoryLocation> = await pool.query('SELECT * FROM inventory_locationi')
+
+    const grouped = rows.reduce(
+      (acc, item) => {
+        if (!acc[item.name]) {
+          acc[item.name] = []
+        }
+        acc[item.name].push(item)
+        return acc
+      },
+      {} as Record<string, InventoryLocation[]>
+    )
+
+    // Chuyển đổi đối tượng thành mảng
+    const groupedArray = Object.keys(grouped).map((name) => ({
+      name,
+      locations: grouped[name]
+    }))
+
+    return groupedArray
   }
   async createProducts(productsArray: Product[]): Promise<number[]> {
     const productIdsPromises = productsArray.map((product) => this.insertProduct(product))

@@ -1,0 +1,302 @@
+:root {
+  --font-family: "Be Vietnam Pro", sans-serif;
+  --color-family: #001857;
+}
+
+body {
+  /* padding: 50px; */
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+.f-s-32 {
+  font-size: 32px;
+}
+
+.f-s-28 {
+  font-size: 28px;
+}
+
+.f-s-24 {
+  font-size: 24px;
+}
+
+.f-s-20 {
+  font-size: 20px;
+}
+
+.f-s-16 {
+  font-size: 16px;
+}
+.f-s-40 {
+  font-size: 40px;
+}
+.f-w-600 {
+  font-weight: 600;
+}
+
+.f-w-800 {
+  font-weight: 800;
+}
+
+.f-f-Be-VN-Pro-Regular {
+  font-family: var(--font-family);
+  font-weight: 400;
+}
+
+.f-f-Be-VN-Pro-Regular-italic {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.f-f-Be-VN-Pro-Medium {
+  font-family: var(--font-family);
+  font-weight: 500;
+}
+
+.f-f-Be-VN-Pro-SemiBold {
+  font-family: var(--font-family);
+  font-weight: 600;
+}
+
+.f-f-Be-VN-Pro-Bold {
+  font-family: var(--font-family);
+  font-weight: 700;
+}
+
+.color-primary {
+  color: var(--color-family);
+}
+
+.gradient-line {
+  height: 2px;
+  background: #d9d9d9;
+  border: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.title {
+  color: #001857;
+  text-align: center;
+  font-size: 32px;
+  font-style: normal;
+  line-height: normal;
+}
+
+.complete-button {
+  border: 3px solid #3491ff;
+  background-color: #3491ff;
+  color: white;
+  width: 255px;
+  height: 60px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.complete-button:hover {
+  background-color: #2d5eda;
+}
+
+.file-upload-wrapper {
+  position: relative;
+  font-family: "Arial", sans-serif;
+}
+
+.file-upload-label {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #d8d8d8;
+  border-radius: 30px;
+  width: 210px;
+  height: 48px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.file-upload-icon {
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+.file-upload-no-file-text {
+  font-size: 14px;
+  color: #6c757d;
+  margin-left: auto;
+}
+
+.file-upload-field {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.file-upload-field:valid + .file-upload-label .file-upload-no-file-text {
+  display: none;
+}
+
+.form-input {
+  width: 7% !important;
+}
+
+#custom-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  table-layout: fixed;
+  background-color: #f6fcff;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#custom-table .first-child {
+  border-top-left-radius: 12px;
+}
+
+#custom-table .last-child {
+  border-top-right-radius: 12px;
+}
+
+#custom-table tr:last-child {
+  border-bottom-left-radius: 12px;
+}
+
+#custom-table tr:last-child {
+  border-bottom-right-radius: 12px;
+}
+
+#custom-table th,
+#custom-table td {
+  border: 1px solid #aae0ff;
+  padding: 8px;
+  text-align: center;
+  vertical-align: middle;
+  word-wrap: break-word;
+}
+
+#custom-table th {
+  background-color: #d8f1ff;
+}
+
+#custom-table td:first-child {
+  width: 50px;
+}
+
+#custom-table input[type="text"],
+#custom-table input[type="number"],
+#custom-table input[type="button"] {
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.function-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.function-buttons:hover img {
+  color: red;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-row label {
+  flex: -1;
+  text-align: left;
+  margin-right: 10px;
+}
+
+.dotted-input {
+  flex-grow: 1;
+  border: none;
+  border-bottom: 1px dotted #000;
+  outline: none;
+  margin-right: 20px;
+  padding: 3px 0;
+}
+
+.dotted-input:focus {
+  border-bottom: 1px solid #000;
+}
+
+.file-upload-btn {
+  display: inline-block;
+  padding: 10px 20px; /* Tùy chỉnh khoảng cách padding để phù hợp */
+  border: 2px solid #007bff; /* Màu viền */
+  border-radius: 25px; /* Độ bo góc */
+  background-color: white; /* Màu nền */
+  color: #007bff; /* Màu chữ */
+  text-align: center;
+  cursor: pointer;
+  font-size: 16px; /* Kích thước font */
+  transition: all 0.3s ease; /* Hiệu ứng chuyển đổi */
+  width: 210px; /* Chiều rộng */
+  height: 48px; /* Chiều cao */
+  line-height: 48px; /* Đặt line-height bằng với chiều cao để text ở giữa */
+  box-sizing: border-box;
+}
+
+/* Hiệu ứng khi hover */
+.file-upload-btn:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Ẩn input file thực sự */
+.file-upload-btn input[type="file"] {
+  display: none;
+}
+
+.signature-field {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.signature-field span {
+  display: block;
+  margin-top: 20px;
+}
+
+.error-message {
+  color: red;
+  display: none;
+  margin-top: 5px;
+}
+
+input:invalid + .error-message {
+  display: block;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* uploadcss */
