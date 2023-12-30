@@ -1,0 +1,55 @@
+{
+	"info": {
+		"_postman_id": "c7385b64-8ba1-4a7c-aa47-850d82c62584",
+		"name": "Manage-inventory",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22644972"
+	},
+	"item": [
+		{
+			"name": "Get inventory location",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/users/inventory",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"inventory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create  receiptment and product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"delivery_person_name\":\"Đặng Tuấn Anh\",\r\n    \"according_to\":\"dự án abc\",\r\n    \"according_number\":16,\r\n    \"according_date\":\"2023-03-15\",\r\n    \"according_by\":\"Dự án stem\",\r\n    \"id_inventory\":2,\r\n    \"organizational_unit\":\"VIMES\",\r\n    \"organization_department\":\"Hành chính\",\r\n    \"date_receipment\":\"2023-03-14\",\r\n    \"number_receipment\":3,\r\n    \"debt\":\"Nợ phần chưa trả\",\r\n    \"having_yes\":\"Phần chưa trả nợ\",\r\n    \"products\":[\r\n        {\r\n            \"ma_sp\":\"DVMN_01\",\r\n            \"name\":\"Màn dell 1234\",\r\n            \"unit\":\"Cái\",\r\n            \"quantity_by_doc\":1,\r\n            \"quantity_real\":1,\r\n            \"price\":123000,\r\n            \"total_price\":123000\r\n        },\r\n        {\r\n            \"ma_sp\":\"DVPC_02\",\r\n            \"name\":\"Case máy asus\",\r\n            \"unit\":\"Cái\",\r\n            \"quantity_by_doc\":2,\r\n            \"quantity_real\":2,\r\n            \"price\":456000,\r\n            \"total_price\":456000\r\n        }\r\n    ]\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/users/receiptment",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"receiptment"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
