@@ -34,9 +34,6 @@ export const createReceiptmentAndProducts = async (
     debt,
     having_yes
   } = req.body
-  console.log(delivery_person_name)
-  console.log(req.body)
-
   const receiptments = {
     delivery_person_name,
     according_to,
