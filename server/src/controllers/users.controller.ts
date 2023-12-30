@@ -4,11 +4,12 @@ import { USERS_MESSAGES } from '~/constants/messages'
 import { ReceiptmentProductsReqBody } from '~/models/requests/User.requests'
 import userService from '~/services/user.services'
 import { ParamsDictionary } from 'express-serve-static-core'
+import { StatusCode } from '~/constants/enums'
 
 export const getLocateController = async (req: Request, res: Response, next: NextFunction) => {
   const data = await userService.getLocation()
   return res.json({
-    status: HTTP_STATUS.OK,
+    status: StatusCode.Success,
     message: USERS_MESSAGES.GET_INVENTORY_LOCATION_SUCCESS,
     data
   })
@@ -54,7 +55,7 @@ export const createReceiptmentAndProducts = async (
   const id_receiptment = await userService.createReceiptment(receiptments)
   await userService.createTableReference(id_receiptment, arr_id_products)
   return res.json({
-    status: HTTP_STATUS.CREATED,
+    status: StatusCode.Success,
     message: USERS_MESSAGES.CREATE_RECEIPTMENT_PRODUCT_SUCCESS
   })
 }
