@@ -76,6 +76,46 @@ class UserService {
     })
     await Promise.all(insertPromises)
   }
+  async updateProduct(productId: number, product: Partial<Product>): Promise<void> {
+    const updateFields: string[] = []
+    const updateValues: any[] = []
+    for (const [field, value] of Object.entries(product)) {
+      updateFields.push(`${field} = $${updateValues.length + 1}`)
+      updateValues.push(value)
+    }
+    updateValues.push(productId)
+    const updateQuery = `UPDATE products SET ${updateFields.join(', ')} WHERE id = $${updateValues.length}`
+    await pool.query(updateQuery, updateValues)
+  }
+  async updateReceiptment(receiptmentId: number, receiptment: Partial<Receiptment>): Promise<void> {
+    const updateFields: string[] = []
+    const updateValues: any[] = []
+    for (const [field, value] of Object.entries(receiptment)) {
+      updateFields.push(`${field} = $${updateValues.length + 1}`)
+      updateValues.push(value)
+    }
+    updateValues.push(receiptmentId)
+    const updateQuery = `UPDATE receiptment SET ${updateFields.join(', ')} WHERE id = $${updateValues.length}`
+    await pool.query(updateQuery, updateValues)
+  }
+  async deleteProduct(productId: number): Promise<void> {
+    const deleteProductQuery = 'DELETE FROM products WHERE id = $1 RETURNING id'
+    const deleteReceiptmentProductsQuery = 'DELETE FROM receiptment_products WHERE product_id = $1'
+
+    await Promise.all([
+      pool.query(deleteProductQuery, [productId]),
+      pool.query(deleteReceiptmentProductsQuery, [productId])
+    ])
+  }
+  async deleteReceiptment(receiptmentId: number): Promise<void> {
+    const deleteReceiptmentQuery = 'DELETE FROM receiptment WHERE id = $1'
+    const deleteReceiptmentProductsQuery = 'DELETE FROM receiptment_products WHERE product_id = $1'
+
+    await Promise.all([
+      pool.query(deleteReceiptmentQuery, [receiptmentId]),
+      pool.query(deleteReceiptmentProductsQuery, [receiptmentId])
+    ])
+  }
 }
 const userService = new UserService()
 export default userService

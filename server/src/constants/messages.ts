@@ -25,7 +25,12 @@ export const USERS_MESSAGES = {
   DEBT_NOT_EMPTY: 'Debt is not empty',
   DEBT_IS_STRING: 'Debt is must be string',
   HAVING_YES_NOT_EMPTY: 'Having yes is not empty',
-  HAVING_YES_IS_STRING: 'Having yes is must be string'
+  HAVING_YES_IS_STRING: 'Having yes is must be string',
+  UPDATE_PRODUCT_SUCCESS: 'Update Product Success!',
+  UPDATE_RECEIPTMENT_SUCCESS: 'Update Receiptment Success',
+  DELETE_PRODUCT_SUCCESS: 'Delete Product Success',
+  DELETE_RECEIPTMENT_SUCCESS: ' Delete Receiptment Success',
+  CREATE_PRODUCT_SUCCESS: 'Create Product Success'
 } as const
 
 export const TWEETS_MESSAGES = {

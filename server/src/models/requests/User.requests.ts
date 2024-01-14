@@ -16,3 +16,6 @@ export interface ReceiptmentProductsReqBody {
   having_yes: string
   products: Product[]
 }
+export interface ProductReqBody {
+  products: Product[]
+}

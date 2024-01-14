@@ -1,5 +1,13 @@
 import { Router } from 'express'
-import { createReceiptmentAndProducts, getLocateController } from '~/controllers/users.controller'
+import {
+  createProductController,
+  createReceiptmentAndProducts,
+  deleteProductController,
+  deleteReceiptmentController,
+  getLocateController,
+  updateProductController,
+  updateReceiptmentController
+} from '~/controllers/users.controller'
 import { createReceipmentAndProductValidator } from '~/middlewares/users.middlewares'
 import { wrapRequestHandler } from '~/utils/handlers'
 const router = Router()
@@ -42,4 +50,15 @@ router.get('/inventory', wrapRequestHandler(getLocateController))
  *     }
  */
 router.post('/receiptment', createReceipmentAndProductValidator, wrapRequestHandler(createReceiptmentAndProducts))
+
+router.post('/product', wrapRequestHandler(createProductController))
+
+router.patch('/receiptment/:receiptmentId', wrapRequestHandler(updateReceiptmentController))
+
+router.patch('/product/:productId', wrapRequestHandler(updateProductController))
+
+router.delete('/receiptment/:receiptmentId', wrapRequestHandler(deleteReceiptmentController))
+
+router.delete('/product/:productId', wrapRequestHandler(deleteProductController))
+
 export default router
